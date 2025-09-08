@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-gray-900">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,30 +7,38 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Roboto+Mono&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
+        .font-mono {
+            font-family: 'Roboto Mono', monospace;
+        }
         .glow-effect {
-            box-shadow: 0 0 10px rgba(52, 211, 153, 0.3), 0 0 20px rgba(52, 211, 153, 0.2);
+            box-shadow: 0 0 15px rgba(52, 211, 153, 0.4), 0 0 5px rgba(52, 211, 153, 0.6);
         }
         .fade-in {
-            animation: fadeIn 1s ease-in-out forwards;
+            animation: fadeIn 1s ease-in-out;
         }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        .animation-delay-3000 {
+            animation-delay: 3s;
         }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-200 flex items-center justify-center min-h-screen p-4">
+<body class="bg-gray-900 text-gray-200 min-h-screen p-4 sm:p-6 lg:p-8">
     <!-- Background Glow Effect -->
-    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-900 via-gray-900 to-emerald-900/40 opacity-50"></div>
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500 rounded-full mix-blend-screen filter blur-3xl opacity-10 animate-pulse"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sky-500 rounded-full mix-blend-screen filter blur-3xl opacity-10 animate-pulse animation-delay-3000"></div>
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500 rounded-full mix-blend-screen filter blur-3xl opacity-10 animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sky-500 rounded-full mix-blend-screen filter blur-3xl opacity-10 animate-pulse animation-delay-3000"></div>
+    </div>
 
     <div class="relative z-10 w-full max-w-6xl mx-auto p-4 fade-in">
+        <!-- Hero Section -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <!-- Left Column: Content -->
             <div class="text-center md:text-left">
@@ -39,21 +47,19 @@
                         Coming Soon
                     </div>
                     <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight text-white mb-5">
-                        A trusted space where <br> <s class="text-gray-500 font-light">lurkers</s> <span class="text-emerald-400">doers</span> connect
+                        A networking platform where <br> <s class="text-gray-500 font-light">lurkers</s> <span class="text-emerald-400">doers</span> connect
                     </h1>
                     <p class="text-lg lg:text-xl text-gray-400 max-w-xl mx-auto md:mx-0 mb-10">
                         Handpicked talent. Zero noise. Not everyone gets in — that's the point.
                     </p>
-        
+
                     <!-- Google Form CTA -->
                     <div class="w-full max-w-md mx-auto md:mx-0">
-                        <!-- IMPORTANT: Replace '#' with your actual Google Form link -->
-                        <a href="#" target="_blank" class="inline-block w-full sm:w-auto px-8 py-4 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-500 transition-transform transform hover:scale-105 duration-300 glow-effect whitespace-nowrap text-center">
+                        <a href="https://forms.gle/uGnxEpERX7ZypdHf7" target="_blank" class="inline-block w-full sm:w-auto px-8 py-4 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-500 transition-transform transform hover:scale-105 duration-300 glow-effect whitespace-nowrap text-center">
                             Request an Invite &rarr;
                         </a>
                          <p class="text-sm text-gray-500 mt-4">1000 spots. Invite-only. First batch opens soon.</p>
                     </div>
-        
                 </main>
             </div>
              <!-- Right Column: Factory Animation -->
@@ -72,7 +78,7 @@
 
         <!-- Value Proposition Section -->
         <div class="mt-24 pt-16 border-t border-gray-800 flex flex-col gap-24">
-            
+
             <!-- Section for Recruiters -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <!-- Text Content -->
@@ -160,34 +166,34 @@
         <div class="mt-24 pt-16 border-t border-gray-800 text-center">
             <h2 class="text-3xl lg:text-4xl font-extrabold text-white mb-4">Our Vetting Process</h2>
             <p class="text-lg text-gray-400 mb-20 max-w-2xl mx-auto">We manually review every application to ensure the highest quality for our community. Here’s how it works.</p>
-            
+
             <div class="relative max-w-5xl mx-auto">
                 <!-- The connecting line for desktop view -->
                 <div class="hidden md:block absolute top-5 left-0 w-full h-0.5 bg-gray-700"></div>
 
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-x-8 gap-y-16">
-                    
+
                     <!-- Step 1 -->
                     <div class="relative flex flex-col items-center text-center">
                         <div class="w-12 h-12 bg-gray-800 flex items-center justify-center rounded-full border-2 border-gray-600 text-xl font-bold text-emerald-400 mb-4 z-10">1</div>
                         <h3 class="text-lg font-semibold text-white mb-2">Apply</h3>
                         <p class="text-gray-400 text-sm px-4">Fill out a short form with your proof of work.</p>
                     </div>
-                    
+
                     <!-- Step 2 -->
                     <div class="relative flex flex-col items-center text-center">
                         <div class="w-12 h-12 bg-gray-800 flex items-center justify-center rounded-full border-2 border-gray-600 text-xl font-bold text-emerald-400 mb-4 z-10">2</div>
                         <h3 class="text-lg font-semibold text-white mb-2">Screening</h3>
                         <p class="text-gray-400 text-sm px-4">Our team reviews every application manually.</p>
                     </div>
-                    
+
                     <!-- Step 3 -->
                     <div class="relative flex flex-col items-center text-center">
                         <div class="w-12 h-12 bg-gray-800 flex items-center justify-center rounded-full border-2 border-gray-600 text-xl font-bold text-emerald-400 mb-4 z-10">3</div>
                         <h3 class="text-lg font-semibold text-white mb-2">(Optional) Call</h3>
                         <p class="text-gray-400 text-sm px-4">A quick 10-min chat for select candidates.</p>
                     </div>
-                    
+
                     <!-- Step 4 -->
                     <div class="relative flex flex-col items-center text-center">
                         <div class="w-12 h-12 bg-emerald-600/50 flex items-center justify-center rounded-full border-2 border-emerald-500 text-xl font-bold text-emerald-300 mb-4 z-10 glow-effect">4</div>
@@ -207,8 +213,7 @@
                 <div class="relative z-10">
                     <h2 class="text-3xl lg:text-4xl font-extrabold text-white mb-4">Ready to Join a New Class of Professionals?</h2>
                     <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">Spaces are limited. Request your invite to secure a spot in our founding cohort.</p>
-                    <!-- IMPORTANT: Replace '#' with your actual Google Form link -->
-                    <a href="#" target="_blank" class="inline-block px-8 py-4 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-500 transition-transform transform hover:scale-105 duration-300 glow-effect">
+                    <a href="https://forms.gle/uGnxEpERX7ZypdHf7" target="_blank" class="inline-block px-8 py-4 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-500 transition-transform transform hover:scale-105 duration-300 glow-effect">
                         Request an Invite &rarr;
                     </a>
                 </div>
@@ -228,9 +233,6 @@
     </div>
 
     <script>
-        // All JavaScript functions related to the email form have been removed.
-        // The animation scripts remain unchanged.
-
         // --- Recruiter Animation ---
         function runRecruiterAnimation() {
             const applyButton = document.getElementById('apply-button');
@@ -239,79 +241,79 @@
             const mockCursor = document.getElementById('mock-cursor');
             const jobPostBox = document.getElementById('job-post-box');
 
-            if (!applyButton) return; // Exit if elements are not on the page
+            function runRecruiterAnimation() {
+                let count = 0;
+                jobPostBox.style.transform = 'translate(0, 0)'; // Reset position
+                applyCounter.textContent = '0';
+                applyButton.classList.remove('bg-red-600', 'animate-shake');
+                applyButton.classList.add('bg-emerald-600');
+                applyCounter.classList.remove('bg-red-700');
+                applyCounter.classList.add('bg-emerald-700');
 
-            let count = 0;
-            jobPostBox.style.transform = 'translate(0, 0)'; // Reset position
-            applyCounter.textContent = '0';
-            applyButton.classList.remove('bg-red-600', 'animate-shake');
-            applyButton.classList.add('bg-emerald-600');
-            applyCounter.classList.remove('bg-red-700');
-            applyCounter.classList.add('bg-emerald-700');
+                function simulateClick() {
+                    // 1. Move cursor
+                    const buttonRect = applyButton.getBoundingClientRect();
+                    const containerRect = animationContainer.getBoundingClientRect();
+                    const targetX = buttonRect.left - containerRect.left + buttonRect.width / 2;
+                    const targetY = buttonRect.top - containerRect.top + buttonRect.height / 2;
+                    mockCursor.style.transform = `translate(${targetX}px, ${targetY}px) scale(0.8)`;
 
-            function simulateClick() {
-                // 1. Move cursor
-                const buttonRect = applyButton.getBoundingClientRect();
-                const containerRect = animationContainer.getBoundingClientRect();
-                const targetX = buttonRect.left - containerRect.left + buttonRect.width / 2;
-                const targetY = buttonRect.top - containerRect.top + buttonRect.height / 2;
-                mockCursor.style.transform = `translate(${targetX}px, ${targetY}px) scale(0.8)`;
+                    // 2. Click effect and update counter
+                    setTimeout(() => {
+                        mockCursor.style.transform = `translate(${targetX}px, ${targetY}px) scale(0.6)`;
 
-                // 2. Click effect and update counter
-                setTimeout(() => {
-                    mockCursor.style.transform = `translate(${targetX}px, ${targetY}px) scale(0.6)`;
-                    
-                    if (count < 300) {
-                         if (count < 4) count += 1;
-                         else if (count < 50) count += 5;
-                         else count += 25;
-                    }
-                    count = Math.min(count, 300);
-                    applyCounter.textContent = count;
+                        if (count < 300) {
+                             if (count < 4) count += 1;
+                             else if (count < 50) count += 5;
+                             else count += 25;
+                        }
+                        count = Math.min(count, 300);
+                        applyCounter.textContent = count;
 
-                    // 3. Jitter the position of the job post box
-                    const randomX = Math.random() * 30 - 15; // Jitter between -15px and +15px
-                    const randomY = Math.random() * 30 - 15;
-                    jobPostBox.style.transform = `translate(${randomX}px, ${randomY}px)`;
+                        // 3. Jitter the position of the job post box
+                        const randomX = Math.random() * 30 - 15; // Jitter between -15px and +15px
+                        const randomY = Math.random() * 30 - 15;
+                        jobPostBox.style.transform = `translate(${randomX}px, ${randomY}px)`;
 
-                    // 4. Check for overload state
-                    if (count > 250) {
-                        applyButton.classList.add('bg-red-600');
-                        applyCounter.classList.add('bg-red-700');
-                    }
-                    if (count >= 300) {
-                        breakButton();
-                    } else {
-                        // Reset cursor and loop
-                        setTimeout(() => {
-                            mockCursor.style.transform = 'translate(150px, 100px) scale(1)';
-                            setTimeout(simulateClick, 100 + Math.random() * 150);
-                        }, 100);
-                    }
+                        // 4. Check for overload state
+                        if (count > 250) {
+                            applyButton.classList.add('bg-red-600');
+                            applyCounter.classList.add('bg-red-700');
+                        }
+                        if (count >= 300) {
+                            breakButton();
+                        } else {
+                            // Reset cursor and loop
+                            setTimeout(() => {
+                                mockCursor.style.transform = 'translate(150px, 100px) scale(1)';
+                                setTimeout(simulateClick, 100 + Math.random() * 150);
+                            }, 100);
+                        }
 
-                }, 200);
+                    }, 200);
+                }
+
+                function breakButton() {
+                    applyButton.classList.add('animate-shake');
+                    applyCounter.textContent = 'ERR!';
+                    jobPostBox.style.transform = 'translate(0, 0)'; // Center the box on break
+                    // Reset animation after a delay
+                    setTimeout(runRecruiterAnimation, 3000);
+                }
+
+                // Add shake animation style if it doesn't exist
+                if (!document.getElementById('shake-style')) {
+                    const style = document.createElement('style');
+                    style.id = 'shake-style';
+                    style.innerHTML = `
+                        @keyframes shake { 0%, 100% { transform: translateX(0); } 10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); } 20%, 40%, 60%, 80% { transform: translateX(3px); } }
+                        .animate-shake { animation: shake 0.5s ease-in-out infinite; }
+                    `;
+                    document.head.appendChild(style);
+                }
+
+                setTimeout(simulateClick, 500);
             }
-            
-            function breakButton() {
-                applyButton.classList.add('animate-shake');
-                applyCounter.textContent = 'ERR!';
-                jobPostBox.style.transform = 'translate(0, 0)'; // Center the box on break
-                // Reset animation after a delay
-                setTimeout(runRecruiterAnimation, 3000);
-            }
-            
-            // Add shake animation style if it doesn't exist
-            if (!document.getElementById('shake-style')) {
-                const style = document.createElement('style');
-                style.id = 'shake-style';
-                style.innerHTML = `
-                    @keyframes shake { 0%, 100% { transform: translateX(0); } 10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); } 20%, 40%, 60%, 80% { transform: translateX(3px); } }
-                    .animate-shake { animation: shake 0.5s ease-in-out infinite; }
-                `;
-                document.head.appendChild(style);
-            }
-            
-            setTimeout(simulateClick, 500);
         }
 
         // --- Factory Animation ---
@@ -373,9 +375,12 @@
         function runProfessionalAnimation() {
             const container = document.getElementById('professional-animation-container');
             if (!container) return;
-            
-            // Clear only profile dots and lines
-            container.querySelectorAll('div:not(.absolute.top-0.left-1\\/2)').forEach(el => el.remove());
+
+            // Clear only profile dots, not the divider
+            const childrenToRemove = Array.from(container.children).filter(child => {
+                return !child.isEqualNode(container.querySelector('.absolute.top-0.left-1\\/2'));
+            });
+            childrenToRemove.forEach(child => child.remove());
 
 
             const totalProfiles = 40;
@@ -389,7 +394,7 @@
                 profile.className = 'absolute rounded-full transition-all duration-1000 ease-in-out';
                 profile.style.left = `${Math.random() * 35 + 5}%`; // Position in left half
                 profile.style.top = `${Math.random() * 85 + 5}%`;
-                
+
                 if (isGood) {
                     profile.style.width = '12px';
                     profile.style.height = '12px';
@@ -427,44 +432,48 @@
 
                 // Phase 3: Connect the good profiles once they've moved
                  setTimeout(() => {
-                    if (container.parentElement.offsetParent !== null) { // only connect if visible
-                        for (let i = 0; i < goodProfilesOnRight.length; i++) {
-                            for (let j = i + 1; j < goodProfilesOnRight.length; j++) {
-                                connectProfiles(goodProfilesOnRight[i], goodProfilesOnRight[j], container);
-                            }
+                    for (let i = 0; i < goodProfilesOnRight.length; i++) {
+                        for (let j = i + 1; j < goodProfilesOnRight.length; j++) {
+                            connectProfiles(goodProfilesOnRight[i], goodProfilesOnRight[j], container);
                         }
                     }
                 }, 1200);
 
 
             }, 2500);
-            
+
             // Phase 4: Restart animation
             setTimeout(runProfessionalAnimation, 7000);
         }
 
         function connectProfiles(p1, p2, container) {
-            const x1 = parseFloat(p1.style.left) + (parseFloat(p1.style.width) / parseFloat(container.offsetWidth) * 100 / 2);
-            const y1 = parseFloat(p1.style.top) + (parseFloat(p1.style.height) / parseFloat(container.offsetHeight) * 100 / 2);
-            const x2 = parseFloat(p2.style.left) + (parseFloat(p2.style.width) / parseFloat(container.offsetWidth) * 100 / 2);
-            const y2 = parseFloat(p2.style.top) + (parseFloat(p2.style.height) / parseFloat(container.offsetHeight) * 100 / 2);
+            if (!p1 || !p2 || !container) return;
+
+            const p1Rect = p1.getBoundingClientRect();
+            const p2Rect = p2.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
+
+            const x1 = p1Rect.left - containerRect.left + p1Rect.width / 2;
+            const y1 = p1Rect.top - containerRect.top + p1Rect.height / 2;
+            const x2 = p2Rect.left - containerRect.left + p2Rect.width / 2;
+            const y2 = p2Rect.top - containerRect.top + p2Rect.height / 2;
 
             const length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
             const angle = Math.atan2(y2 - y1, x2 - x1) * (180 / Math.PI);
 
             const line = document.createElement('div');
             line.className = 'absolute';
-            line.style.width = `${length}%`;
+            line.style.width = `${length}px`;
             line.style.height = '1px';
             line.style.backgroundColor = 'rgba(52, 211, 153, 0.3)';
-            line.style.left = `${x1}%`;
-            line.style.top = `${y1}%`;
+            line.style.left = `${x1}px`;
+            line.style.top = `${y1}px`;
             line.style.transform = `rotate(${angle}deg)`;
             line.style.transformOrigin = '0 0';
             line.style.opacity = '0';
             line.style.transition = 'opacity 0.5s ease';
             container.appendChild(line);
-            
+
             setTimeout(() => line.style.opacity = '1', 100);
         }
 
@@ -478,7 +487,4 @@
     </script>
 </body>
 </html>
-
-
-
 
