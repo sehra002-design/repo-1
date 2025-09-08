@@ -52,7 +52,7 @@
                     <p class="text-lg lg:text-xl text-gray-400 max-w-xl mx-auto md:mx-0 mb-10">
                         Handpicked talent. Zero noise. Not everyone gets in — that's the point.
                     </p>
-
+        
                     <!-- Google Form CTA -->
                     <div class="w-full max-w-md mx-auto md:mx-0">
                         <a href="https://forms.gle/uGnxEpERX7ZypdHf7" target="_blank" class="inline-block w-full sm:w-auto px-8 py-4 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-500 transition-transform transform hover:scale-105 duration-300 glow-effect whitespace-nowrap text-center">
@@ -78,7 +78,7 @@
 
         <!-- Value Proposition Section -->
         <div class="mt-24 pt-16 border-t border-gray-800 flex flex-col gap-24">
-
+            
             <!-- Section for Recruiters -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <!-- Text Content -->
@@ -166,34 +166,34 @@
         <div class="mt-24 pt-16 border-t border-gray-800 text-center">
             <h2 class="text-3xl lg:text-4xl font-extrabold text-white mb-4">Our Vetting Process</h2>
             <p class="text-lg text-gray-400 mb-20 max-w-2xl mx-auto">We manually review every application to ensure the highest quality for our community. Here’s how it works.</p>
-
+            
             <div class="relative max-w-5xl mx-auto">
                 <!-- The connecting line for desktop view -->
                 <div class="hidden md:block absolute top-5 left-0 w-full h-0.5 bg-gray-700"></div>
 
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-x-8 gap-y-16">
-
+                    
                     <!-- Step 1 -->
                     <div class="relative flex flex-col items-center text-center">
                         <div class="w-12 h-12 bg-gray-800 flex items-center justify-center rounded-full border-2 border-gray-600 text-xl font-bold text-emerald-400 mb-4 z-10">1</div>
                         <h3 class="text-lg font-semibold text-white mb-2">Apply</h3>
                         <p class="text-gray-400 text-sm px-4">Fill out a short form with your proof of work.</p>
                     </div>
-
+                    
                     <!-- Step 2 -->
                     <div class="relative flex flex-col items-center text-center">
                         <div class="w-12 h-12 bg-gray-800 flex items-center justify-center rounded-full border-2 border-gray-600 text-xl font-bold text-emerald-400 mb-4 z-10">2</div>
                         <h3 class="text-lg font-semibold text-white mb-2">Screening</h3>
                         <p class="text-gray-400 text-sm px-4">Our team reviews every application manually.</p>
                     </div>
-
+                    
                     <!-- Step 3 -->
                     <div class="relative flex flex-col items-center text-center">
                         <div class="w-12 h-12 bg-gray-800 flex items-center justify-center rounded-full border-2 border-gray-600 text-xl font-bold text-emerald-400 mb-4 z-10">3</div>
                         <h3 class="text-lg font-semibold text-white mb-2">(Optional) Call</h3>
                         <p class="text-gray-400 text-sm px-4">A quick 10-min chat for select candidates.</p>
                     </div>
-
+                    
                     <!-- Step 4 -->
                     <div class="relative flex flex-col items-center text-center">
                         <div class="w-12 h-12 bg-emerald-600/50 flex items-center justify-center rounded-full border-2 border-emerald-500 text-xl font-bold text-emerald-300 mb-4 z-10 glow-effect">4</div>
@@ -241,79 +241,77 @@
             const mockCursor = document.getElementById('mock-cursor');
             const jobPostBox = document.getElementById('job-post-box');
 
-            function runRecruiterAnimation() {
-                let count = 0;
-                jobPostBox.style.transform = 'translate(0, 0)'; // Reset position
-                applyCounter.textContent = '0';
-                applyButton.classList.remove('bg-red-600', 'animate-shake');
-                applyButton.classList.add('bg-emerald-600');
-                applyCounter.classList.remove('bg-red-700');
-                applyCounter.classList.add('bg-emerald-700');
+            let count = 0;
+            jobPostBox.style.transform = 'translate(0, 0)'; // Reset position
+            applyCounter.textContent = '0';
+            applyButton.classList.remove('bg-red-600', 'animate-shake');
+            applyButton.classList.add('bg-emerald-600');
+            applyCounter.classList.remove('bg-red-700');
+            applyCounter.classList.add('bg-emerald-700');
 
-                function simulateClick() {
-                    // 1. Move cursor
-                    const buttonRect = applyButton.getBoundingClientRect();
-                    const containerRect = animationContainer.getBoundingClientRect();
-                    const targetX = buttonRect.left - containerRect.left + buttonRect.width / 2;
-                    const targetY = buttonRect.top - containerRect.top + buttonRect.height / 2;
-                    mockCursor.style.transform = `translate(${targetX}px, ${targetY}px) scale(0.8)`;
+            function simulateClick() {
+                // 1. Move cursor
+                const buttonRect = applyButton.getBoundingClientRect();
+                const containerRect = animationContainer.getBoundingClientRect();
+                const targetX = buttonRect.left - containerRect.left + buttonRect.width / 2;
+                const targetY = buttonRect.top - containerRect.top + buttonRect.height / 2;
+                mockCursor.style.transform = `translate(${targetX}px, ${targetY}px) scale(0.8)`;
 
-                    // 2. Click effect and update counter
-                    setTimeout(() => {
-                        mockCursor.style.transform = `translate(${targetX}px, ${targetY}px) scale(0.6)`;
+                // 2. Click effect and update counter
+                setTimeout(() => {
+                    mockCursor.style.transform = `translate(${targetX}px, ${targetY}px) scale(0.6)`;
+                    
+                    if (count < 300) {
+                         if (count < 4) count += 1;
+                         else if (count < 50) count += 5;
+                         else count += 25;
+                    }
+                    count = Math.min(count, 300);
+                    applyCounter.textContent = count;
 
-                        if (count < 300) {
-                             if (count < 4) count += 1;
-                             else if (count < 50) count += 5;
-                             else count += 25;
-                        }
-                        count = Math.min(count, 300);
-                        applyCounter.textContent = count;
+                    // 3. Jitter the position of the job post box
+                    const randomX = Math.random() * 30 - 15; // Jitter between -15px and +15px
+                    const randomY = Math.random() * 30 - 15;
+                    jobPostBox.style.transform = `translate(${randomX}px, ${randomY}px)`;
 
-                        // 3. Jitter the position of the job post box
-                        const randomX = Math.random() * 30 - 15; // Jitter between -15px and +15px
-                        const randomY = Math.random() * 30 - 15;
-                        jobPostBox.style.transform = `translate(${randomX}px, ${randomY}px)`;
+                    // 4. Check for overload state
+                    if (count > 250) {
+                        applyButton.classList.add('bg-red-600');
+                        applyCounter.classList.add('bg-red-700');
+                    }
+                    if (count >= 300) {
+                        breakButton();
+                    } else {
+                        // Reset cursor and loop
+                        setTimeout(() => {
+                            mockCursor.style.transform = 'translate(150px, 100px) scale(1)';
+                            setTimeout(simulateClick, 100 + Math.random() * 150);
+                        }, 100);
+                    }
 
-                        // 4. Check for overload state
-                        if (count > 250) {
-                            applyButton.classList.add('bg-red-600');
-                            applyCounter.classList.add('bg-red-700');
-                        }
-                        if (count >= 300) {
-                            breakButton();
-                        } else {
-                            // Reset cursor and loop
-                            setTimeout(() => {
-                                mockCursor.style.transform = 'translate(150px, 100px) scale(1)';
-                                setTimeout(simulateClick, 100 + Math.random() * 150);
-                            }, 100);
-                        }
-
-                    }, 200);
-                }
-
-                function breakButton() {
-                    applyButton.classList.add('animate-shake');
-                    applyCounter.textContent = 'ERR!';
-                    jobPostBox.style.transform = 'translate(0, 0)'; // Center the box on break
-                    // Reset animation after a delay
-                    setTimeout(runRecruiterAnimation, 3000);
-                }
-
-                // Add shake animation style if it doesn't exist
-                if (!document.getElementById('shake-style')) {
-                    const style = document.createElement('style');
-                    style.id = 'shake-style';
-                    style.innerHTML = `
-                        @keyframes shake { 0%, 100% { transform: translateX(0); } 10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); } 20%, 40%, 60%, 80% { transform: translateX(3px); } }
-                        .animate-shake { animation: shake 0.5s ease-in-out infinite; }
-                    `;
-                    document.head.appendChild(style);
-                }
-
-                setTimeout(simulateClick, 500);
+                }, 200);
             }
+            
+            function breakButton() {
+                applyButton.classList.add('animate-shake');
+                applyCounter.textContent = 'ERR!';
+                jobPostBox.style.transform = 'translate(0, 0)'; // Center the box on break
+                // Reset animation after a delay
+                setTimeout(runRecruiterAnimation, 3000);
+            }
+            
+            // Add shake animation style if it doesn't exist
+            if (!document.getElementById('shake-style')) {
+                const style = document.createElement('style');
+                style.id = 'shake-style';
+                style.innerHTML = `
+                    @keyframes shake { 0%, 100% { transform: translateX(0); } 10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); } 20%, 40%, 60%, 80% { transform: translateX(3px); } }
+                    .animate-shake { animation: shake 0.5s ease-in-out infinite; }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            setTimeout(simulateClick, 500);
         }
 
         // --- Factory Animation ---
@@ -375,7 +373,7 @@
         function runProfessionalAnimation() {
             const container = document.getElementById('professional-animation-container');
             if (!container) return;
-
+            
             // Clear only profile dots, not the divider
             const childrenToRemove = Array.from(container.children).filter(child => {
                 return !child.isEqualNode(container.querySelector('.absolute.top-0.left-1\\/2'));
@@ -394,7 +392,7 @@
                 profile.className = 'absolute rounded-full transition-all duration-1000 ease-in-out';
                 profile.style.left = `${Math.random() * 35 + 5}%`; // Position in left half
                 profile.style.top = `${Math.random() * 85 + 5}%`;
-
+                
                 if (isGood) {
                     profile.style.width = '12px';
                     profile.style.height = '12px';
@@ -441,7 +439,7 @@
 
 
             }, 2500);
-
+            
             // Phase 4: Restart animation
             setTimeout(runProfessionalAnimation, 7000);
         }
@@ -473,7 +471,7 @@
             line.style.opacity = '0';
             line.style.transition = 'opacity 0.5s ease';
             container.appendChild(line);
-
+            
             setTimeout(() => line.style.opacity = '1', 100);
         }
 
